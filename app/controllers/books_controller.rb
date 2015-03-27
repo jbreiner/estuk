@@ -40,8 +40,8 @@ class BooksController < ApplicationController
 
   private
     def set_book
-      @book = Book.find(params[:id])
-    end
+  @book = Book.friendly.find(params[:id])
+end
 
     def book_params
       params.require(:book).permit(:name, :author, :description, :price, :availability, :image, :resource)
